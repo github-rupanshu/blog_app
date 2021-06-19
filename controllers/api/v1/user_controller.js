@@ -14,7 +14,9 @@ module.exports.register = async (req, res) => {
         if (user) {
             throw new Error(" User Already Registered");
         }
-        let newUser = await User.create(req.body);
+        let newUser = await User.create( email,
+            password,
+            name);
 
         return res.status(201).send({
             msg: "User Registered Successfully",

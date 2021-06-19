@@ -13,5 +13,4 @@ console.log('router loaded');
 
 router.use('/api', require('./api'));
 
-
 module.exports = router;
