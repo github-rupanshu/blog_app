@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb+srv://admin:admin@cluster0.2du74.mongodb.net/blog_app?retryWrites=true&w=majority',
-{useNewUrlParser: true, useUnifiedTopology: true});
+{useNewUrlParser: true, useUnifiedTopology: true,useCreateIndex: true,});
 // mongoose.connect('mongodb://localhost/todo_app');
 const db = mongoose.connection;
 
