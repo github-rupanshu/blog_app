@@ -4,8 +4,7 @@ const jwt = require('./config/passportJWT');
 const passport= require('passport');
 
 const app = express();
-const port = 8000;
-
+const port = process.env.PORT || 8000;
 // used to extarct jason data from req
 app.use(express.json());
 app.use(express.urlencoded());
