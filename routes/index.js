@@ -4,7 +4,27 @@ const router = express.Router();
 console.log('router loaded');
 
 
+/**
+ * @swagger
+ * /ping:
+ *  get:
+ *    description: Use to ping hosted server
+ *    responses:
+ *      '200':
+ *        description: application deployed
+ */
+
 router.use('/api', require('./api'));
+
+/**
+ * @swagger
+ * /ping:
+ *  get:
+ *    description: Use to ping hosted server
+ *    responses:
+ *      '200':
+ *        description: application deployed
+ */
 
 router.get("/ping", (req, res) => {
     return res.status(200).json({

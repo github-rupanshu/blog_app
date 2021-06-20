@@ -57,9 +57,7 @@ module.exports.getByTitle = async (req, res) => {
   
 module.exports.getAllBlogs = async (req, res) => {
   try {
-    //const todos = await Todo.find(User.findOne(req.user._id).todos);
-    // const user = await User.findOne(req.user._id)
-    //     .populate("todos");
+  
     const blogs = await Blog.find({})
       .populate("userId", "name")
       .select("title name");
@@ -79,7 +77,6 @@ module.exports.destroy = async (req, res) => {
     let blog = req.blog;
     let userid = blog.userId;
 
-    if (req.user.id == blog.userId) {
       let user = await User.findByIdAndUpdate(
         userid,
         {
@@ -94,7 +91,7 @@ module.exports.destroy = async (req, res) => {
       );
       blog.remove();
       await user.save();
-    }
+    
     return res.status(200).json({
       msg: "blog deleted",
       blog,

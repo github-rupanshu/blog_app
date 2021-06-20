@@ -5,6 +5,15 @@ const Blog =require("../../../models/blog")
 const {canDeleteBlog}=require("../../../permissions/blog")
 
 const passport = require("passport");
+/**
+ * @swagger
+ * /api/v1/blog/create:
+ *  get:
+ *    description: Use to ping hosted server
+ *    responses:
+ *      '200':
+ *        description: application deployed
+ */
 
 router.post('/create', passport.authenticate("jwt", {
     session: false
